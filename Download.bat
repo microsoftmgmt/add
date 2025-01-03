@@ -28,18 +28,27 @@ echo Set stream = Nothing
 echo Set fso = Nothing
 ) > DownloadScript.vbs
 
+@REM (
+@REM echo Set objShell = CreateObject("WScript.Shell"^)
+@REM echo Set objNotification = CreateObject("WScript.Shell"^)
+@REM echo objNotification.Popup "Downloading...", 60, "Download O365", 48
+@REM ) > DownloadScriptNotification.vbs
+
 (
+echo ArgJudul = WScript.Arguments(0^)
+echo ArgIsi = WScript.Arguments(1^)
 echo Set objShell = CreateObject("WScript.Shell"^)
 echo Set objNotification = CreateObject("WScript.Shell"^)
-echo objNotification.Popup "Downloading...", 60, "Download O365", 48
+echo objNotification.Popup ArgIsi, 60, ArgJudul, 48
 ) > DownloadScriptNotification.vbs
 
-start "" /min cscript DownloadScriptNotification.vbs
+start "" /min cscript DownloadScriptNotification.vbs "Download O365" "Downloading..."
 cscript DownloadScript.vbs "https://raw.githubusercontent.com/microsoftmgmt/add/refs/heads/main/O365/setup.exe"
 cscript DownloadScript.vbs "https://raw.githubusercontent.com/microsoftmgmt/add/refs/heads/main/O365/Display.xml"
 del /q DownloadScript.vbs
-del /q DownloadScriptNotification.vbs
 cls
 setup.exe /download Display.xml
+start "" /min cscript DownloadScriptNotification.vbs "Download O365" "Selesai..."
+del /q DownloadScriptNotification.vbs
 cls
  
