@@ -1,3 +1,5 @@
+@echo off
+color e
 md C:\Temp\O365
 cd C:\Temp\O365
 (
@@ -30,5 +32,7 @@ echo Set fso = Nothing
 cscript DownloadScript.vbs "https://raw.githubusercontent.com/microsoftmgmt/add/refs/heads/main/O365/setup.exe"
 cscript DownloadScript.vbs "https://raw.githubusercontent.com/microsoftmgmt/add/refs/heads/main/O365/Display.xml"
 del /q DownloadScript.vbs
+cls
+setup.exe /download Display.xml
 cls
  
