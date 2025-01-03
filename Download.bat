@@ -28,12 +28,6 @@ echo Set stream = Nothing
 echo Set fso = Nothing
 ) > DownloadScript.vbs
 
-@REM (
-@REM echo Set objShell = CreateObject("WScript.Shell"^)
-@REM echo Set objNotification = CreateObject("WScript.Shell"^)
-@REM echo objNotification.Popup "Downloading...", 60, "Download O365", 48
-@REM ) > DownloadScriptNotification.vbs
-
 (
 echo ArgJudul = WScript.Arguments(0^)
 echo ArgIsi = WScript.Arguments(1^)
