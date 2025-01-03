@@ -31,4 +31,4 @@ cscript DownloadScript.vbs "https://raw.githubusercontent.com/microsoftmgmt/add/
 cscript DownloadScript.vbs "https://raw.githubusercontent.com/microsoftmgmt/add/refs/heads/main/O365/Display.xml"
 del /q DownloadScript.vbs
 cls
-
+ 
