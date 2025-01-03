@@ -1,4 +1,3 @@
-@echo off
 color e
 md C:\Temp\O365
 cd C:\Temp\O365
@@ -29,9 +28,17 @@ echo Set stream = Nothing
 echo Set fso = Nothing
 ) > DownloadScript.vbs
 
+(
+echo Set objShell = CreateObject("WScript.Shell"^)
+echo Set objNotification = CreateObject("WScript.Shell"^)
+echo objNotification.Popup "Downloading...", 60, "Download O365", 48
+) > DownloadScriptNotification.vbs
+
+start "" /min cscript DownloadScriptNotification.vbs
 cscript DownloadScript.vbs "https://raw.githubusercontent.com/microsoftmgmt/add/refs/heads/main/O365/setup.exe"
 cscript DownloadScript.vbs "https://raw.githubusercontent.com/microsoftmgmt/add/refs/heads/main/O365/Display.xml"
 del /q DownloadScript.vbs
+del /q DownloadScriptNotification.vbs
 cls
 setup.exe /download Display.xml
 cls
