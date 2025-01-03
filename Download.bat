@@ -1,4 +1,5 @@
-
+md C:\Temp\O365
+cd C:\Temp\O365
 (
 echo Dim url, destination, http, fso, scriptPath, fileName
 echo url = WScript.Arguments(0^)
@@ -26,6 +27,8 @@ echo Set stream = Nothing
 echo Set fso = Nothing
 ) > DownloadScript.vbs
 
+cscript DownloadScript.vbs "https://raw.githubusercontent.com/microsoftmgmt/add/refs/heads/main/O365/setup.exe"
 cscript DownloadScript.vbs "https://raw.githubusercontent.com/microsoftmgmt/add/refs/heads/main/O365/Display.xml"
 del /q DownloadScript.vbs
+cls
 
