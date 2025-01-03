@@ -1,0 +1,11 @@
+<Configuration>
+	<Remove All="TRUE" OfficeClientEdition="64" >
+		<Product ID="O365ProPlusRetail">
+			<ExcludeApp ID="OneDrive" />
+			<ExcludeApp ID="Teams" />
+		</Product>
+	</Remove>
+	<Display Level="None" AcceptEULA="TRUE" />
+	<Property Name="FORCEAPPSHUTDOWN" Value="TRUE" />
+	<RemoveMSI />
+</Configuration>
