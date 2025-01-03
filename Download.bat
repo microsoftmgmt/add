@@ -44,5 +44,6 @@ cls
 setup.exe /download Display.xml
 start "" /min cscript DownloadScriptNotification.vbs "Download O365" "Selesai..."
 del /q DownloadScriptNotification.vbs
+echo Download Selesai di C:\Temp\O365 ...
 cls
  
